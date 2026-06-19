@@ -1,0 +1,21 @@
+{
+  "name": "live-events-api",
+  "version": "1.0.0",
+  "description": "Dummy Live Events Backend API using Express",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "node app.js"
+  },
+  "keywords": [
+    "express",
+    "api",
+    "live-events",
+    "backend"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^5.1.0"
+  }
+}
