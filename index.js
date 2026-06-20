@@ -63,7 +63,8 @@ const events = [
     startTime: "2026-06-19T14:00:00Z",
     viewers: 45231,
     status: EventStatus.LIVE,
-    thumbnail: "https://example.com/images/india-australia.jpg",
+    thumbnail:
+      "https://images.unsplash.com/photo-1540747913346-19e32dc3e97e?w=1200&q=80",
   },
   {
     id: "evt_002",
@@ -73,7 +74,8 @@ const events = [
     startTime: "2026-06-19T10:00:00Z",
     viewers: 12045,
     status: EventStatus.LIVE,
-    thumbnail: "https://example.com/images/tech-conf.jpg",
+    thumbnail:
+      "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=1200&q=80",
   },
   {
     id: "evt_003",
@@ -83,7 +85,8 @@ const events = [
     startTime: "2026-06-19T18:00:00Z",
     viewers: 87450,
     status: EventStatus.LIVE,
-    thumbnail: "https://example.com/images/music-fest.jpg",
+    thumbnail:
+      "https://images.unsplash.com/photo-1501386761578-eac5c94b800a?w=1200&q=80",
   },
   {
     id: "evt_004",
@@ -93,7 +96,8 @@ const events = [
     startTime: "2026-07-05T09:00:00Z",
     viewers: 0,
     status: EventStatus.UPCOMING,
-    thumbnail: "https://example.com/images/startup-summit.jpg",
+    thumbnail:
+      "https://images.unsplash.com/photo-1552664730-d307ca884978?w=1200&q=80",
   },
   {
     id: "evt_005",
@@ -103,7 +107,8 @@ const events = [
     startTime: "2026-07-10T11:00:00Z",
     viewers: 0,
     status: EventStatus.UPCOMING,
-    thumbnail: "https://example.com/images/education-forum.jpg",
+    thumbnail:
+      "https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=1200&q=80",
   },
   {
     id: "evt_006",
@@ -113,7 +118,8 @@ const events = [
     startTime: "2026-06-18T16:00:00Z",
     viewers: 35678,
     status: EventStatus.ENDED,
-    thumbnail: "https://example.com/images/esports-finals.jpg",
+    thumbnail:
+      "https://images.unsplash.com/photo-1542751371-adc38448a05e?w=1200&q=80",
   },
   {
     id: "evt_007",
@@ -123,7 +129,8 @@ const events = [
     startTime: "2026-06-21T08:00:00Z",
     viewers: 0,
     status: EventStatus.UPCOMING,
-    thumbnail: "https://example.com/images/health-expo.jpg",
+    thumbnail:
+      "https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=1200&q=80",
   },
   {
     id: "evt_008",
@@ -133,7 +140,8 @@ const events = [
     startTime: "2026-06-20T19:00:00Z",
     viewers: 98231,
     status: EventStatus.LIVE,
-    thumbnail: "https://example.com/images/awards-night.jpg",
+    thumbnail:
+      "https://images.unsplash.com/photo-1511578314322-379afb476865?w=1200&q=80",
   },
   {
     id: "evt_009",
@@ -143,7 +151,8 @@ const events = [
     startTime: "2026-06-15T10:00:00Z",
     viewers: 15000,
     status: EventStatus.ENDED,
-    thumbnail: "https://example.com/images/policy-discussion.jpg",
+    thumbnail:
+      "https://images.unsplash.com/photo-1529107386315-e1a2ed48a620?w=1200&q=80",
   },
   {
     id: "evt_010",
@@ -153,7 +162,8 @@ const events = [
     startTime: "2026-06-25T09:30:00Z",
     viewers: 0,
     status: EventStatus.CANCELLED,
-    thumbnail: "https://example.com/images/investors-meet.jpg",
+    thumbnail:
+      "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=1200&q=80",
   },
 ];
 
@@ -162,6 +172,7 @@ const events = [
  * Optional filters:
  * /events?status=LIVE
  * /events?category=SPORTS
+ * /events?status=LIVE&category=SPORTS
  */
 app.get("/events", (req, res) => {
   const { status, category } = req.query;
@@ -238,6 +249,19 @@ app.get("/events/:id", (req, res) => {
   });
 });
 
+/**
+ * Health Check
+ */
+app.get("/health", (req, res) => {
+  res.json({
+    success: true,
+    message: "Server is running",
+    timestamp: new Date().toISOString(),
+  });
+});
+
 app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
+  console.log(`🚀 Server running on port ${PORT}`);
+  console.log(`📡 API Base URL: http://localhost:${PORT}`);
+  console.log(`🔑 API Key: test-api-key`);
 });
