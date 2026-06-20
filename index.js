@@ -130,7 +130,7 @@ const events = [
     viewers: 0,
     status: EventStatus.UPCOMING,
     thumbnail:
-      "https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=1200&q=80",
+      "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=1200&q=80",
   },
   {
     id: "evt_008",
